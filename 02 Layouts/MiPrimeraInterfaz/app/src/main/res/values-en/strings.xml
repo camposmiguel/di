@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MyFirstInterface</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="main_label_user">User</string>
+    <string name="main_label_password">Password</string>
+    <string name="label_centrado">Center</string>
+    <string name="label_nuevo_texto">New text</string>
+
+
+</resources>
