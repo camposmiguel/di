@@ -19,16 +19,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         lista = (ListView)findViewById(R.id.listView);
-        alumnos = new String[] {"Carlos","Diego","Luis","Jesús","Fernando","Carlos","Diego","Luis","Jesús","Fernando"};
+        alumnos = new String[] {"Carlos","Diego","Luis","Jesús",
+                "Fernando","Carlos","Diego","Luis","Jesús","Fernando"};
 
-        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,alumnos);
+        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1,alumnos);
 
         lista.setAdapter(adaptador);
 
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(MainActivity.this,"Seleccionado: "+alumnos[position],Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this,"Seleccionado: "+alumnos[position],
+                        Toast.LENGTH_SHORT).show();
 
                 view.animate().setDuration(1000).rotationX(360);
             }

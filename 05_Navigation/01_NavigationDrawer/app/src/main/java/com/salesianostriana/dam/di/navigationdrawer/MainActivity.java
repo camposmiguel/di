@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -77,25 +78,30 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
+        // Handle navigation view item clicks here.xx
         int id = item.getItemId();
+        String mensaje = "";
 
         if (id == R.id.nav_camera) {
-            // Handle the camera action
+            mensaje = "Cámara";
         } else if (id == R.id.nav_gallery) {
-
+            mensaje = "Galería";
         } else if (id == R.id.nav_slideshow) {
-
+            mensaje = "Slideshow";
         } else if (id == R.id.nav_manage) {
-
+            mensaje = "Gestión";
         } else if (id == R.id.nav_share) {
-
+            mensaje = "Compartir";
         } else if (id == R.id.nav_send) {
-
+            mensaje = "Enviar";
         }
+
+        Toast.makeText(this,mensaje,Toast.LENGTH_SHORT).show();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 }
