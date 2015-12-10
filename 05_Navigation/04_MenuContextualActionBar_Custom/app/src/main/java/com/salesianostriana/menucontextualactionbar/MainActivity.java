@@ -2,7 +2,6 @@ package com.salesianostriana.menucontextualactionbar;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.ActionMode;
@@ -30,19 +29,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+        lista = (ListView) findViewById(R.id.listView);
 
-        // Si tenemos claro que el layout que hemos utilizado
-        // para pintar un elemento de la lista, no varía de dimensiones
-        // es recomendable poner la siguiente línea de código, que
-        // permite al recycler saber que las dimensiones no cambian
-        // y por tanto se ahorra el tener que hacer cálculos a la
-        // hora de reutilizar las vistas
-        mRecyclerView.setHasFixedSize(true);
-
-        // use a linear layout manager
-        mLayoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(mLayoutManager);
 
         viajes = new ArrayList();
         viajes.add(new ItemViaje("Sevilla","Spain",R.drawable.giralda,5));
@@ -54,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         viajes.add(new ItemViaje("Santiago","Spain",R.drawable.giralda,2));
 
         // specify an adapter (see also next example)
-        mAdapter = new MyAdapter(viajes);
+        mAdapter = new MyAdapter(viajes, this);
         mRecyclerView.setAdapter(mAdapter);
 
         // Transformamos la lista en un elemento de selección múltiple
